@@ -1,0 +1,1 @@
+a.jpg:/home/soundarya/photo/list1/:a1.jpg|a.jpg:/home/soundarya/photo/list2/:a2.jpg

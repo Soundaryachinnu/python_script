@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# should not save with extn and should be executed with bash 
+#eg : bash read (filename)
+rm -rf photo/
+date | awk '{print$4}'
+IFS=$"||"
+for f in `cat /tmp/ListingImages4.txt`; 
+	do	
+	IFS=$":"
+	read -r v1 v2 v3 <<< "$f"	
+	if [ ! -z $v1 ] && [ ! -z $v2 ] && [ ! -z $v3 ]
+	then
+	    mkdir -p $v2
+	    #rsync -az $v1 $v2$v3;
+	    #cp -a $v1 $v2$v3;
+	    scp -C $v1 $v3;
+	    #install -D $v1 $v2$v3;
+	    #exit
+	fi
+done
+date | awk '{print$4}'
